@@ -1,0 +1,39 @@
+package myMain;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+	public class MainClass {
+		static Scanner userinput = new Scanner(System.in);
+		public static void main(String[] args){
+			Queue<String> line = new LinkedList<>();
+			Queue<String> newline = new LinkedList<>();
+			char let = 'A';
+			int time = 0;
+			int rn;
+			String person = "" + let + let + let;
+			line.add(person);
+			
+			while (time < 40)
+			{
+				rn = (int)(Math.random()* 6);
+				if ((rn == 1) || (rn == 2)) {let++; person = "" + let + let + let;
+				if (Math.random() < 0.5) {
+					line.add(person);
+					}else {
+						newline.add(person);
+					}
+					}
+				if ((rn == 3) || (rn == 4) || (rn == 5)) {line.poll();
+				}
+				
+				System.out.println("Time " + time + " : Line Queue: " + line + " | New Line Queue: " + newline);
+				time ++;
+			}
+			 
+	}	
+	}
